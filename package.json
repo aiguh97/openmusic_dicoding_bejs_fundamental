@@ -15,6 +15,7 @@
   "description": "teguh submission openmusic dicoding backend fundamental",
   "dependencies": {
     "@hapi/hapi": "^21.4.3",
+    "bcrypt": "^6.0.0",
     "dotenv": "^17.2.2",
     "joi": "^18.0.1",
     "nanoid": "^5.1.6",
