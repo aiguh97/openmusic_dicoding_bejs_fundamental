@@ -1,28 +1,41 @@
+const Joi = require('joi');
+
+/**
+ * routes is a function that will be used to handle all of the routes
+ */
 const routes = (handler) => [
     {
         method: 'POST',
         path: '/songs',
-        handler: (request, h) => handler.postSongHandler(request, h),
+        handler: handler.postSongHandler,
     },
     {
         method: 'GET',
         path: '/songs',
-        handler: (request, h) => handler.getSongsHandler(request, h),
+        handler: handler.getSongsHandler,
+        options: {
+            validate: {
+                query: Joi.object({
+                    title: Joi.string(),
+                    performer: Joi.string(),
+                }),
+            },
+        },
     },
     {
         method: 'GET',
         path: '/songs/{id}',
-        handler: (request, h) => handler.getSongByIdHandler(request, h),
+        handler: handler.getSongByIdHandler,
     },
     {
         method: 'PUT',
         path: '/songs/{id}',
-        handler: (request, h) => handler.putSongByIdHandler(request, h),
+        handler: handler.putSongByIdHandler,
     },
     {
         method: 'DELETE',
         path: '/songs/{id}',
-        handler: (request, h) => handler.deleteSongByIdHandler(request, h),
+        handler: handler.deleteSongByIdHandler,
     },
 ];
 

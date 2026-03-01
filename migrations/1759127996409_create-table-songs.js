@@ -1,3 +1,7 @@
+/* eslint-disable camelcase */
+
+exports.shorthands = undefined;
+
 exports.up = (pgm) => {
     pgm.createTable('songs', {
         id: {
@@ -22,19 +26,26 @@ exports.up = (pgm) => {
         },
         duration: {
             type: 'INTEGER',
-            notNull: false,
-        },
-        album_id: {
-            type: 'VARCHAR(50)',
-            notNull: false,
         },
         created_at: {
-            type: 'TEXT',
+            type: 'TIMESTAMP',
             notNull: true,
         },
         updated_at: {
-            type: 'TEXT',
+            type: 'TIMESTAMP',
             notNull: true,
+        },
+        album_id: {
+            type: 'VARCHAR(50)',
+            references: 'albums(id)',
+        },
+    });
+
+    pgm.addConstraint('songs', 'fk_songs_album_id', {
+        foreignKeys: {
+            columns: 'album_id',
+            references: 'albums(id)',
+            onDelete: 'cascade',
         },
     });
 };
@@ -42,4 +53,3 @@ exports.up = (pgm) => {
 exports.down = (pgm) => {
     pgm.dropTable('songs');
 };
-

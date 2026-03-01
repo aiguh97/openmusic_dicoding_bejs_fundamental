@@ -1,0 +1,5 @@
+npx node-pg-migrate create create-table-playlist-songs
+
+GRANT ALL ON DATABASE openmusic TO aris;
+ 
+ALTER DATABASE openmusic OWNER TO aris;
