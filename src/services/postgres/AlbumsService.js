@@ -88,6 +88,21 @@ class AlbumsService {
             );
         }
     }
+
+    async editAlbumCover(id, coverUrl) {
+        const query = {
+            text: 'UPDATE albums SET cover_url = $1 WHERE id = $2 RETURNING id',
+            values: [coverUrl, id],
+        };
+
+        const result = await this._pool.query(query);
+
+        if (!result.rows.length) {
+            throw new NotFoundError(
+                'Gagal memperbarui cover album. Id tidak ditemukan'
+            );
+        }
+    }
 }
 
 module.exports = AlbumsService;

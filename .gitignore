@@ -3,3 +3,4 @@ node_modules
 *.pem
 .prod.env
 package-lock.json
+*.env

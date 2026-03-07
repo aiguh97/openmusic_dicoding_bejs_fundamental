@@ -1,10 +1,11 @@
 /* eslint-disable camelcase */
 
 // Album basic
-const mapDBToAlbumModel = ({ id, name, year, created_at, updated_at }) => ({
+const mapDBToAlbumModel = ({ id, name, year, cover_url, created_at, updated_at }) => ({
   id,
   name,
   year,
+  coverUrl: cover_url,
   createdAt: created_at,
   updatedAt: updated_at,
 });
@@ -59,10 +60,11 @@ const mapDBSongsToModelDetail = ({
 });
 
 // Album detail
-const mapDBAlbumsToModel = ({ id, name, year, songs }) => ({
+const mapDBAlbumsToModel = ({ id, name, year, cover_url, songs }) => ({
   id,
   name,
   year,
+  coverUrl: cover_url,
   songs,
 });
 
