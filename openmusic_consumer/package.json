@@ -1,0 +1,34 @@
+{
+  "name": "openmusic_consumer",
+  "version": "1.0.0",
+  "description": "Open Music Consumer - RabbitMQ consumer for async tasks like playlist export",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "start-dev": "nodemon ./src/index.js",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint ./src --fix"
+  },
+  "keywords": [
+    "music",
+    "consumer",
+    "rabbitmq",
+    "async"
+  ],
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.10.9",
+    "auto-bind": "^4.0.0",
+    "dotenv": "^17.2.2",
+    "nanoid": "^5.1.6",
+    "nodemailer": "^6.10.1",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.32.0",
+    "nodemon": "^2.0.22"
+  }
+}
