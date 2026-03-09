@@ -122,8 +122,3 @@ Refer to the project's Postman collection for full request/response examples.
 ![Export Email](./screenshots/send_email.png)
 
 
----
-
-If you'd like, I can:
-- Update README with exact Postman instructions and example requests.
-- Add more screenshots from your local runs (I can generate placeholder images or you can provide screenshots to embed).
